@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"log"
 	"strings"
 )
 
@@ -11,7 +12,7 @@ func main() {
 
 	dat, err := readFile()
 	if err != nil {
-		fmt.Println("Error: ", err)
+		log.Fatal(err)
 	}
 
 	sanitized := sanitize(string(dat))
